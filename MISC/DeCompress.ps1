@@ -1,0 +1,1 @@
+﻿Get-ChildItem E:\Backup\HFOE01\openedge\*.7z | % {& "E:\Backup\HFOE01\openedge\Scripts\7-ZipPortable\App\7-Zip64\7z.exe" "x" $_.fullname "-oE:\Backup\HFOE01\openedge"}
