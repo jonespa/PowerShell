@@ -214,7 +214,7 @@ Function Confirm-AzureVM {
 
 	[void][System.Reflection.Assembly]::LoadWithPartialName('System.Serviceprocess')
 
-	$vmbus = [System.ServiceProcess.ServiceController]::GetDevices() | where {$_.Name -eq 'vmbus'}
+	$vmbus = [System.ServiceProcess.ServiceController]::GetDevices() | Where-Object {$_.Name -eq 'vmbus'}
 
 	If($vmbus.Status -eq 'Running')
 	{
