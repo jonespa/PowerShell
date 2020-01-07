@@ -220,7 +220,7 @@ Function Confirm-AzureVM {
 	{
 		$client = New-Object Microsoft.WindowsAzure.Internal.DhcpClient
 		try {
-			[Microsoft.WindowsAzure.Internal.DhcpClient]::GetDhcpInterfaces() | % { 
+			[Microsoft.WindowsAzure.Internal.DhcpClient]::GetDhcpInterfaces() | ForEach-Object { 
 				$val = $client.DhcpRequestParams($_.Id, 245)
 				if($val -And $val.Length -eq 4) {
 					$detected = $True
