@@ -30,13 +30,20 @@ do
      {
            '1' {
                 Clear-Host
-                'You chose option #1'
-           } '2' {
+                "Do you want to grant $User Full access permission on $Shared Mailbox?" | Add-MailboxPermission -identity "$Shared" -User "$User" -AccessRights FullAccess -InheritanceType all
+
+           }
+
+         
+           
+           '2' {
                 Clear-Host
-                'You chose option #2'
-           } '3' {
+                "Do you want to grant $User Send-As permission on $Shared Mailbox?" | Add-MailboxPermission -identity "$Shared" -User "$User" -AccessRights Send-As -InheritanceType all
+           } 
+           
+           '3' {
                 Clear-Host
-                'You chose option #3'
+                "Do you want to grant $User Send on Behalf of permission on $Shared Mailbox?" | Add-MailboxPermission -identity "$Shared" -User "$User" -AccessRights Send-As -InheritanceType all
            } 'q' {
                 return
            }
@@ -47,4 +54,4 @@ until ($input -eq 'q')
 
 
 
-#Add-MailboxPermission -identity "$Shared" -User "$User" -AccessRights FullAccess -InheritanceType all
+Add-MailboxPermission -identity "$Shared" -User "$User" -AccessRights FullAccess -InheritanceType all
