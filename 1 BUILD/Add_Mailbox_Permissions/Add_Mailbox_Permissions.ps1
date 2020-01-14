@@ -8,7 +8,8 @@
 
 # https://www.business.com/articles/powershell-interactive-menu/
 # dot sourcing https://mcpmag.com/articles/2017/02/02/exploring-dot-sourcing-in-powershell.aspx 
-. .\exchange_fu
+. .\Exchange_Functions.ps1
+
 function Show-pickconnection
 {
      param (
@@ -30,16 +31,16 @@ do
      {
            '1' {
                 Clear-Host 
+                connect_EOL
                 
-                elseif ($confirm -eq "N"){return}
                 return
                }
 
 
            '2' {
                Clear-Host 
-
-               elseif ($confirm -eq "N"){return}
+               connect_local_exchange
+               
                return
               }
            
