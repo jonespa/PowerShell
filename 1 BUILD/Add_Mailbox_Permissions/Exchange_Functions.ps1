@@ -1,3 +1,5 @@
+Write-host "succesfully imported"
+
 function connect_local_exchange
 
 {
