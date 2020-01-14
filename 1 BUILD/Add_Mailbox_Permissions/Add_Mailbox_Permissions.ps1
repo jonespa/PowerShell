@@ -7,7 +7,8 @@
 #$User = read-host "Enter Full Name of User";
 
 # https://www.business.com/articles/powershell-interactive-menu/
-
+# dot sourcing https://mcpmag.com/articles/2017/02/02/exploring-dot-sourcing-in-powershell.aspx 
+. .\exchange_fu
 function Show-pickconnection
 {
      param (
@@ -29,8 +30,7 @@ do
      {
            '1' {
                 Clear-Host 
-                $confirm = Read-Host "Is the mailbox in the cloud? (Y/N)" 
-                if ($confirm -eq "Y"){Add-MailboxPermission -identity "$Shared" -User "$User" -AccessRights FullAccess -InheritanceType all}
+                
                 elseif ($confirm -eq "N"){return}
                 return
                }
@@ -38,8 +38,7 @@ do
 
            '2' {
                Clear-Host 
-               $confirm = Read-Host "Is the Mailbox local? (Y/N)" 
-               if ($confirm -eq "Y"){Add-MailboxPermission -identity "$Shared" -User "$User" -AccessRights sendas -InheritanceType all}
+
                elseif ($confirm -eq "N"){return}
                return
               }
