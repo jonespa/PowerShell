@@ -71,20 +71,16 @@ do
            '1' {
                 Clear-Host 
                 $confirm = Read-Host "Do you want to grant $User 'Full Access' permission on $Shared Mailbox? (Y/N)" 
-                if ($confirm -eq "Y"){Add-MailboxPermission -identity "$Shared" -User "$User" -AccessRights FullAccess -InheritanceType all}
-                elseif ($confirm -eq "N"){return}
-                return
+                if ($confirm -eq "Y"){Write-Host "Applying permissions..."; Add-MailboxPermission -identity "$Shared" -User "$User" -AccessRights FullAccess -InheritanceType all; Write-Host "Done" -ForegroundColor Green}
+                elseif ($confirm -eq "N"){Write-Host "Cancelled..." -ForegroundColor Red}
                }
-
 
            '2' {
                Clear-Host 
                $confirm = Read-Host "Do you want to grant $User 'Send As' permission on $Shared Mailbox? (Y/N)" 
-               if ($confirm -eq "Y"){Add-MailboxPermission -identity "$Shared" -User "$User" -AccessRights sendas -InheritanceType all}
-               elseif ($confirm -eq "N"){return}
-               return
+               if ($confirm -eq "Y"){Write-Host "Applying permissions..."; Add-MailboxPermission -identity "$Shared" -User "$User" -AccessRights sendas -InheritanceType all; Write-Host "Done" -ForegroundColor Green}
+               elseif ($confirm -eq "N"){Write-Host "Cancelled..." -ForegroundColor Red}
               }
-           
            
            'q' {
                 return
