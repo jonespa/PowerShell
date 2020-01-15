@@ -27,7 +27,7 @@ do
                 Clear-Host 
                 connect_EOL
                 
-                return
+                #return
                }
 
 
@@ -35,12 +35,12 @@ do
                Clear-Host 
                connect_local_exchange
                
-               return
+               #return
               }
            
            
            'q' {
-                return
+                #return
            }
      }
      pause
