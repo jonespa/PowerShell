@@ -17,8 +17,8 @@ function Show-pickconnection
      Write-Host "Q: Press 'Q' to quit."
 }
 
-do
-{
+
+
      Show-pickconnection
      $input = Read-Host "Please make a selection"
      switch ($input)
@@ -44,8 +44,8 @@ do
            }
      }
      pause
-}
-until ($input -eq '1,2,q')
+
+
 
 $shared = read-host "Enter Shared Mailbox Name"
 $User = read-host "Enter Full Name of User";
