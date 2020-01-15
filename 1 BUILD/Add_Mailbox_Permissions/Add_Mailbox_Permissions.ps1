@@ -45,7 +45,7 @@ do
      }
      pause
 }
-until ($input -eq 'q')
+until ($input -eq '1,2,q')
 
 $shared = read-host "Enter Shared Mailbox Name"
 $User = read-host "Enter Full Name of User";
