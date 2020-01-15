@@ -1,15 +1,9 @@
 Set-ExecutionPolicy RemoteSigned
-#$UserCredential = Get-Credential
-#$Session = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri https://outlook.office365.com/powershell-liveid/ -Credential $UserCredential -Authentication Basic -AllowRedirection
-#Import-PSSession $Session -DisableNameChecking
-
-#$shared = read-host "Enter Shared Mailbox Name"
-#$User = read-host "Enter Full Name of User";
-
-# https://www.business.com/articles/powershell-interactive-menu/
 # dot sourcing https://mcpmag.com/articles/2017/02/02/exploring-dot-sourcing-in-powershell.aspx 
+# This line of code allows the use of functions from the references ps1 file
 . .\Exchange_Functions.ps1
 
+# https://www.business.com/articles/powershell-interactive-menu/
 function Show-pickconnection
 {
      param (
@@ -53,7 +47,8 @@ do
 }
 until ($input -eq 'q')
 
-
+$shared = read-host "Enter Shared Mailbox Name"
+$User = read-host "Enter Full Name of User";
 function Show-Menu
 {
      param (
