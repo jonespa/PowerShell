@@ -48,7 +48,8 @@ function Show-pickconnection
 
 
 $shared = read-host "Enter Shared Mailbox Name"
-$User = read-host "Enter Full Name of User";
+$User = read-host "Enter Full Name of User"
+
 function Show-Menu
 {
      param (
