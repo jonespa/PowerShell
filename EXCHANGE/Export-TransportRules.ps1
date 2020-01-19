@@ -1,0 +1,1 @@
+$file = Export-TransportRuleCollection; Set-Content -Path "C:\temp\TransportRules.xml" -Value $file.FileData -Encoding Byte
