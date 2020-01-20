@@ -1,8 +1,8 @@
-$Domain = "pisolicitors.com"
+$Domain = "zestlegal.co.uk"
 $RemoveSMTPDomain = "smtp:*@$Domain"
  
  
-Get-Mailbox | Where-Object {$_.EmailAddresses -clike $RemoveSMTPDomain} | Export-Csv c:\temp\psolicitors.csv
+Get-Mailbox | Where-Object {$_.EmailAddresses -clike $RemoveSMTPDomain} | Export-Csv c:\temp\zestlegalcouk.csv 
  
 <# 
 ForEach ($Mailbox in $AllMailboxes)
