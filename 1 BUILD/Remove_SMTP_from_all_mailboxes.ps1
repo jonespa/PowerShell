@@ -1,10 +1,10 @@
-$Domain = "o365pilot.com"
+$Domain = "pisolicitors.com"
 $RemoveSMTPDomain = "smtp:*@$Domain"
  
  
-$AllMailboxes = Get-Mailbox | Where-Object {$_.EmailAddresses -clike $RemoveSMTPDomain}
+Get-Mailbox | Where-Object {$_.EmailAddresses -clike $RemoveSMTPDomain} | Export-Csv c:\temp\psolicitors.csv
  
- 
+<# 
 ForEach ($Mailbox in $AllMailboxes)
 {
  
@@ -18,3 +18,4 @@ ForEach ($Mailbox in $AllMailboxes)
    
  
 } 
+#>
