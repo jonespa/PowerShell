@@ -48,8 +48,8 @@ function Show-pickconnection
 
 
 
-$shared = read-host "Enter Shared Mailbox Name"
-$User = read-host "Enter Full Name of User"
+$shared = read-host "Enter Shared Mailbox Name or Email address"
+$User = read-host "Enter Full Name or Email address of User"
 
 function Show-Menu
 {
@@ -78,10 +78,10 @@ do
                }
 
            '2' {
-               Clear-Host 
-               $confirm = Read-Host "Do you want to grant $User 'Send As' permission on $Shared Mailbox? (Y/N)" 
-               if ($confirm -eq "Y"){Write-Host "Applying permissions..."; Add-RecipientPermission $shared -AccessRights SendAs -Trustee $user -AccessRights FullAccess -InheritanceType all; Write-Host "Done" -ForegroundColor Green}
-               elseif ($confirm -eq "N"){Write-Host "Cancelled..." -ForegroundColor Red}
+                Clear-Host 
+                $confirm = Read-Host "Do you want to grant $User 'Send As' permission on $Shared Mailbox? (Y/N)" 
+                if ($confirm -eq "Y"){Write-Host "Applying permissions..."; Add-RecipientPermission "$shared" -Trustee "$user" -AccessRights SendAs -InheritanceType all; Write-Host "Done" -ForegroundColor Green}
+                elseif ($confirm -eq "N"){Write-Host "Cancelled..." -ForegroundColor Red}
               }
            
            'q' {
